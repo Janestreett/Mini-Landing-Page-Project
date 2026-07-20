@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Landing Page - Akmal Fahreza</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap');
+
+  :root {
+    --bg: #0c0c0d;
+    --surface: #16161810;
+    --surface-solid: #17171a;
+    --hairline: rgba(230, 220, 200, 0.14);
+    --ink: #ece7dc;
+    --muted: #8e8a80;
+    --gold: #b99a5b;
+    --gold-bright: #d4b876;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { text-decoration: none; color: inherit; }
+
+  .eyebrow {
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  /* ===== Navbar ===== */
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 26px 6%;
+    border-bottom: 1px solid var(--hairline);
+    position: sticky;
+    top: 0;
+    background-color: rgba(12, 12, 13, 0.85);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+  }
+
+  .navbar .mark {
+    font-family: 'Fraunces', serif;
+    font-size: 21px;
+    letter-spacing: 3px;
+    font-weight: 500;
+  }
+
+  .navbar .mark span {
+    color: var(--gold);
+  }
+
+  .navbar ul {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+  }
+
+  .navbar ul li a {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding-bottom: 6px;
+    border-bottom: 1px solid transparent;
+    transition: color 0.35s ease, border-color 0.35s ease;
+  }
+
+  .navbar ul li a:hover {
+    color: var(--gold-bright);
+    border-bottom-color: var(--gold);
+  }
+
+  /* ===== Hero ===== */
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 130px 6% 120px;
+    border-bottom: 1px solid var(--hairline);
+  }
+
+  .hero .rule {
+    width: 40px;
+    height: 1px;
+    background-color: var(--gold);
+    margin: 22px 0 28px;
+  }
+
+  .hero h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 56px;
+    line-height: 1.2;
+    max-width: 780px;
+    color: var(--ink);
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold-bright);
+  }
+
+  .hero p {
+    margin-top: 24px;
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--muted);
+    max-width: 480px;
+  }
+
+  /* ===== Tombol ===== */
+  .btn {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 15px 38px;
+    background: transparent;
+    color: var(--gold-bright);
+    border: 1px solid var(--gold);
+    font-size: 12px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.4s ease, color 0.4s ease, letter-spacing 0.4s ease;
+  }
+
+  .btn:hover {
+    background-color: var(--gold);
+    color: #0c0c0d;
+    letter-spacing: 3.5px;
+  }
+
+  /* ===== Feature cards ===== */
+  .features {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--hairline);
+  }
+
+  .card {
+    flex: 1 1 280px;
+    padding: 64px 44px;
+    border-right: 1px solid var(--hairline);
+    transition: background-color 0.4s ease;
+  }
+
+  .card:last-child {
+    border-right: none;
+  }
+
+  .card:hover {
+    background-color: rgba(185, 154, 91, 0.05);
+  }
+
+  .card .num {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--gold);
+    margin-bottom: 18px;
+    display: block;
+  }
+
+  .card h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 21px;
+    margin-bottom: 14px;
+    color: var(--ink);
+  }
+
+  .card p {
+    font-size: 14px;
+    line-height: 1.75;
+    color: var(--muted);
+  }
+
+  /* ===== Footer ===== */
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+    padding: 48px 6%;
+  }
+
+  footer .mark {
+    font-family: 'Fraunces', serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: var(--ink);
+  }
+
+  footer p {
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: var(--muted);
+  }
+
+  /* ===== Responsive mobile ===== */
+  @media (max-width: 640px) {
+    .navbar ul {
+      display: none;
+    }
+
+    .hero {
+      padding: 90px 8% 80px;
+    }
+
+    .hero h1 {
+      font-size: 34px;
+    }
+
+    .features {
+      flex-direction: column;
+    }
+
+    .card {
+      border-right: none;
+      border-bottom: 1px solid var(--hairline);
+    }
+
+    .card:last-child {
+      border-bottom: none;
+    }
+  }
+
+</style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="mark">AKMAL <span>FAHREZA</span></div>
+    <ul>
+      <li><a href="#hero">Beranda</a></li>
+      <li><a href="#features">Fitur</a></li>
+      <li><a href="#footer">Kontak</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <span class="eyebrow">Mini Landing Page Project</span>
+    <div class="rule"></div>
+    <h1>Merancang halaman yang <em>tenang</em>, jelas, dan terarah</h1>
+    <p>
+      Sebuah eksplorasi antarmuka sederhana — dibangun dengan HTML dan CSS,
+      menekankan pada kerapian struktur dan detail yang halus.
+    </p>
+    <button class="btn">Mulai Menjelajah</button>
+  </section>
+
+  <!-- Feature Cards -->
+  <section class="features" id="features">
+    <div class="card">
+      <span class="num">I.</span>
+      <h3>Terstruktur</h3>
+      <p>Tata letak dibangun di atas flexbox, sehingga setiap bagian tetap seimbang di berbagai ukuran layar.</p>
+    </div>
+
+    <div class="card">
+      <span class="num">II.</span>
+      <h3>Adaptif</h3>
+      <p>Media query menyesuaikan susunan halaman secara halus antara tampilan desktop dan mobile.</p>
+    </div>
+
+    <div class="card">
+      <span class="num">III.</span>
+      <h3>Halus</h3>
+      <p>Setiap interaksi — hover, transisi warna, perubahan bentuk — dirancang untuk terasa tenang, bukan ramai.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="mark">Akmal Fahreza</div>
+    <p>KELAS XII PPLG · MINI LANDING PAGE PROJECT</p>
+    <p>© 2026</p>
+  </footer>
+
+</body>
+</html>
